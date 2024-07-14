@@ -61,7 +61,7 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre("save", async function (next) {
-  if (this.isModified("password")) {
+  if (!this.isModified("password")) {
     next();
   }
   this.password = await bcrypt.hash(this.password, 10);
@@ -73,7 +73,7 @@ userSchema.methods.passwordChecker = async function (enteredPassword) {
 
 userSchema.methods.generateJsonWebToken = function () {
   return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY, {
-    expiresIn: JWT_EXPIRES,
+    expiresIn: process.env.JWT_EXPIRES,
   });
 };
 export const User = mongoose.model("User", userSchema);
