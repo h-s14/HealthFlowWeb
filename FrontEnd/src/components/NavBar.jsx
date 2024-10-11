@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../main";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const NavBar = () => {
   const [show, setShow] = useState(false);
@@ -55,6 +56,9 @@ const NavBar = () => {
               LOGIN
             </button>
           )}
+        </div>
+        <div className="hamburger" onClick={() => setShow(!show)}>
+          <GiHamburgerMenu />
         </div>
       </nav>
     </>
