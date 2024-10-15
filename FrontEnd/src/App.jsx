@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -9,19 +9,24 @@ import Login from "./pages/Login";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/navBar/NavBar";
 import { Context } from "./main";
 import axios from "axios";
 import Footer from "./components/Footer";
 
 const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
   useEffect(() => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
           "http://localhost:4000/api/v1/user/patient/me",
-          { withCredentials: true }
+          { withCredentials: true },
         );
         setIsAuthenticated(true);
         setUser(response.data.user);
@@ -33,7 +38,7 @@ const App = () => {
     fetchUser();
   }, [isAuthenticated]);
   return (
-    <>
+    <div className={`${darkMode && "dark"}`}>
       <Router>
         <NavBar />
         <Routes>
@@ -45,8 +50,14 @@ const App = () => {
         </Routes>
         <Footer />
         <ToastContainer position="top-center" />
+        <button
+          className="fixed bottom-5 right-5 flex h-16 w-16 items-center justify-center rounded-full bg-white text-3xl text-black shadow-lg transition dark:bg-black dark:text-white"
+          onClick={toggleDarkMode}
+        >
+          {darkMode ? "LHT" : "DRK"}
+        </button>
       </Router>
-    </>
+    </div>
   );
 };
 export default App;

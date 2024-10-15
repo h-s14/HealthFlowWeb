@@ -5,12 +5,12 @@ import Departments from "../components/Departments";
 import MessageForm from "../components/MessageForm";
 const Home = () => {
   return (
-    <>
-      <Hero title={"Welcome to Health Flow"} imageUrl={"/hero.png"} />
-      <Biography imageUrl={"/about.png"} />
+    <div className="from-dark-gradient-1 via-dark-gradient-2 to-dark-gradient-3 bg-light-background pt-32 dark:bg-gradient-to-tl">
+      <Hero />
+      <Biography />
       <Departments />
       <MessageForm />
-    </>
+    </div>
   );
 };
 

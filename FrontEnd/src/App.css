@@ -1,10 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
+  @apply transition-colors duration-200;
+  font-family: "Montserrat", sans-serif;
+}
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  font-family: "Montserrat", sans-serif;
+
 }
 body {
   background: #e5e5e5;
@@ -428,7 +435,6 @@ footer .content div:last-child div svg {
   font-weight: 700;
 }
 
-/**********************************************************************************************************************/
 nav {
   display: flex;
   width: 100%;
@@ -586,4 +592,4 @@ input[type="time"]:before {
 }
 footer .logo-img {
   width: 100%;
-}
+} */

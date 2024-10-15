@@ -7,7 +7,6 @@ import AddNewAdmin from "./components/AddNewAdmin";
 import Doctors from "./components/Doctors";
 import Messages from "./components/Messages";
 import Sidebar from "./components/Sidebar";
-import Login2 from "./components/Login";
 import axios from "axios";
 
 import { ToastContainer } from "react-toastify";
