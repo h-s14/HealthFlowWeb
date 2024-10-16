@@ -1,4 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import { React, useContext, useEffect, useState } from "react";
+import { useRef } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -16,10 +17,12 @@ import Footer from "./components/Footer";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
-
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
+  //
+  const EleRef = useRef();
+  //
   const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
   useEffect(() => {
     const fetchUser = async () => {
@@ -54,7 +57,11 @@ const App = () => {
           className="fixed bottom-5 right-5 flex h-16 w-16 items-center justify-center rounded-full bg-white text-3xl text-black shadow-lg transition dark:bg-black dark:text-white"
           onClick={toggleDarkMode}
         >
-          {darkMode ? "LHT" : "DRK"}
+          {darkMode ? (
+            <span className="text-sm">LHT</span>
+          ) : (
+            <span className="text-sm">DRK</span>
+          )}
         </button>
       </Router>
     </div>

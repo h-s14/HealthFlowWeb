@@ -19,7 +19,8 @@
     "react-konva": "^18.2.10",
     "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^6.26.2",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^10.0.5",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

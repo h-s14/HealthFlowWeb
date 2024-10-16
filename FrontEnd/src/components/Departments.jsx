@@ -64,7 +64,7 @@ const Departments = () => {
     },
   };
   return (
-    <div className="container departments">
+    <div className="departments container">
       <h2>Departments</h2>
       <Carousel
         responsive={responsive}
