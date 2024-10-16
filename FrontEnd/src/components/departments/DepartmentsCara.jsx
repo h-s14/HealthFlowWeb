@@ -6,19 +6,9 @@ import "swiper/css/navigation";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 
-import slide_img_1 from "/departments/nature-1.jpg";
-import slide_img_2 from "/departments/nature-1.jpg";
-import slide_img_3 from "/departments/nature-1.jpg";
-import slide_img_4 from "/departments/cardio.jpg";
-import slide_img_5 from "/departments/cardio.jpg";
-import slide_img_6 from "/departments/cardio.jpg";
-import slide_img_7 from "/departments/cardio.jpg";
-import slide_img_8 from "/departments/cardio.jpg";
-import slide_img_9 from "/departments/cardio.jpg";
-
 import { FreeMode, Pagination } from "swiper/modules";
 
-import { RxArrowTopRight, RxArrowTopLeft } from "react-icons/rx";
+import { RxArrowTopRight } from "react-icons/rx";
 import { ServiceData } from "./constants";
 
 const DepartmentsCara = () => {

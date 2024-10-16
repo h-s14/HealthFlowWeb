@@ -2,9 +2,11 @@ import { React, useRef } from "react";
 import Hero from "../components/Hero";
 import Biography from "../components/Biography";
 import Departments from "../components/departments/Departments";
-import MessageForm from "../components/MessageForm";
 import SineWave from "../components/SineWave";
 import DepartmentsCara from "../components/departments/DepartmentsCara";
+import MessageForm from "../components/MessageForm";
+import { ArrowUp } from "lucide-react";
+import Footers from "../components/Footers";
 
 const Home = () => {
   const homeScroll = () => {
@@ -17,7 +19,7 @@ const Home = () => {
   const departmentsRef = useRef(null);
   const messageRef = useRef(null);
   return (
-    <div className="bg-light-background from-dark-gradient-1 via-dark-gradient-2 to-dark-gradient-3 pt-32 dark:bg-gradient-to-tl">
+    <div className="from-light-gradient-1 via-light-gradient-2 to-light-gradient-3 bg-gradient-to-tr pt-32 text-[#333333] dark:bg-gradient-to-tl dark:from-dark-gradient-1 dark:via-dark-gradient-2 dark:to-dark-gradient-3 dark:text-[#E0E0E0]">
       {/* -----------------------Hero/Home Page----------------------- */}
       <div>
         <Hero />
@@ -102,7 +104,14 @@ const Home = () => {
         <MessageForm />
         <>
           {/* -----------------------Scroll Button Start----------------------- */}
-          <div className="pl-[15%] pt-8">
+          <button
+            className="fixed bottom-5 left-5 z-10 flex h-16 w-16 items-center justify-center rounded-full border-2 border-black border-opacity-20 bg-gray-400 bg-opacity-10 text-3xl text-black shadow-lg backdrop-blur-md backdrop-filter transition dark:bg-black dark:bg-opacity-60 dark:text-white"
+            onClick={homeScroll}
+          >
+            <ArrowUp className="mt-1 h-12 w-14 font-bold text-gray-900 dark:text-gray-400" />
+          </button>
+
+          {/* <div className="pl-[15%] pt-8">
             <button
               onClick={homeScroll}
               className="z-10 h-24 w-12 rounded-full border-gray-100 bg-gray-400 bg-opacity-10 backdrop-blur-md backdrop-filter"
@@ -112,13 +121,14 @@ const Home = () => {
                 className="mt-12 h-12 w-14 font-bold"
               />
             </button>
-          </div>
+          </div> */}
           {/* -----------------------Scroll Button End----------------------- */}
           <div className="py-5 pl-9">
             <SineWave />
           </div>
         </>
       </div>
+      {/* <Footers /> */}
     </div>
   );
 };

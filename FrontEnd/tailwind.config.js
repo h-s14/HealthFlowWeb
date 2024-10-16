@@ -7,21 +7,44 @@ export default {
     extend: {
       colors: {
         "light-background": "#8b8b8b",
+
+        "light-gradient-1": "#E0F7FA",
+        "light-gradient-2": "#B3E5FC",
+        "light-gradient-3": "#FFFFFF",
+
         "dark-background": "#2E073F",
-        "dark-gradient-1": "#2a384c",
-        "dark-gradient-2": "#4f6485",
-        "dark-gradient-3": "#333333",
-        "nav-bar-bg-light": "#F8F9FA",
-        "nav-bar-bg-dark": "#F8F9FA",
+
+        "dark-gradient-1": "#0D47A1",
+        "dark-gradient-2": "#1976D2",
+        "dark-gradient-3": "#1A1A1A",
+
+        lippu: "#333333",
+        dippu: "FFFFFF",
+
+        "nav-bar-bg-grad-light-1": "#135DEG",
+        "nav-bar-bg-grad-light-2": "#E0F7FA",
+        "nav-bar-bg-grad-light-3": "#B3E5FC",
+
+        "nav-bar-bg-grad-dark-1": "#007BFF",
+        "nav-bar-bg-grad-dark-2": "#007BFF",
+        "nav-bar-bg-grad-dark-3": "#007BFF",
+
         "nav-bar-btn-grad-light-start": "#007BFF",
         "nav-bar-btn-grad-light-end": "#5B9BD5",
-        "nav-bar-btn-light-txt": "#FFFFFF",
+
+        "nav-bar-btn-txt-light": "#FFFFFF",
+        "nav-bar-btn-txt-dark": "#000000",
+
         "nav-bar-btn-grad-light-hover-start": "#007BFF",
         "nav-bar-btn-grad-light-hover-end": "#5B9BD5",
         "nav-bar-btn-grad-dark-start": "#007BFF",
         "nav-bar-btn-grad-dark-end": "#5B9BD5",
         "nav-bar-btn-grad-dark-hover-start": "#007BFF",
         "nav-bar-btn-grad-dark-hover-end": "#5B9BD5",
+
+        "nav-bar-bg-light": "#F8F9FA",
+        "nav-bar-bg-dark": "#333333",
+
         "nav-bar-bg-hover-light": "#FFFFFF",
         "nav-bar-bg-hover-dark": "#000000",
         "nav-bar-link-light": "#000000",
@@ -35,5 +58,8 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // Plugin to hide scrollbars
+    require("tailwind-scrollbar-hide"),
+  ],
 };

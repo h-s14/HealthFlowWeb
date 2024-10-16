@@ -5,11 +5,9 @@ import Biography from "../components/Biography";
 const AboutUs = () => {
   return (
     <>
-      <Hero
-        title={"Learn More About Us | Health Flow"}
-        imageUrl={"/about.png"}
-      />
-      <Biography imageUrl={"/whoweare.png"} />
+      <div className="flex h-screen w-full items-center justify-center text-3xl">
+        Error 404
+      </div>
     </>
   );
 };

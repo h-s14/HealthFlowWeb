@@ -7,10 +7,7 @@
   font-family: "Montserrat", sans-serif;
 }
 /* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
+
 
 }
 body {
@@ -71,6 +68,7 @@ h6 {
     font-weight: 900;
   }
 }
+  **/
 .container {
   padding: 0 100px;
 }
@@ -79,6 +77,7 @@ h6 {
     padding: 0 20px;
   }
 }
+/**
 .hero {
   display: flex;
   gap: 50px;
@@ -155,7 +154,8 @@ h6 {
       padding-bottom: 40px;
     }
   }
-}
+}**/
+
 .form-component {
   padding-top: 40px;
   padding-bottom: 60px;
@@ -258,7 +258,7 @@ h6 {
     font-size: 20px;
     padding: 10px;
   }
-}
+} /**
 .biography {
   display: flex;
   gap: 50px;
@@ -318,6 +318,7 @@ footer {
 footer hr {
   margin-bottom: 30px;
 }
+  **/
 footer .content {
   display: flex;
   gap: 20px;
@@ -389,7 +390,7 @@ footer .content div:last-child div svg {
     flex-direction: column;
   }
 }
-
+/**
 .departments {
   padding-top: 30px;
   padding-bottom: 50px;

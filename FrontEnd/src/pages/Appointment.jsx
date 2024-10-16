@@ -4,10 +4,10 @@ import Hero from "../components/Hero";
 const Appointment = () => {
   return (
     <>
-      <Hero
+      {/* <Hero
         title={"Schedule Your Appointment | Health Flow"}
         imageUrl={"/signin.png"}
-      />
+      /> */}
       <AppointmentForm />
     </>
   );

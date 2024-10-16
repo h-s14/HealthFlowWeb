@@ -1,5 +1,4 @@
 import React from "react";
-import SineWave from "./SineWave";
 
 const Hero = () => {
   return (

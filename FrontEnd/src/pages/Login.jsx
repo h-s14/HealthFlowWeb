@@ -1,11 +1,12 @@
-import React, { useContext, useState } from "react";
+import { React, useContext, useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { FaUser, FaLock } from "react-icons/fa";
 import { Context } from "../main";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
 import { toast } from "react-toastify";
+import axios from "axios";
+
 const Login = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -20,7 +21,7 @@ const Login = () => {
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
       toast.success(response.data.message);
       setIsAuthenticated(true);
@@ -34,51 +35,75 @@ const Login = () => {
   }
 
   return (
-    <div className="container form-component logon-form">
-      <h2>Sign In</h2>
-      <p>Please Login To Continue</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat rem non
-        perspiciatis assumenda minima in.
-      </p>
-      <form onSubmit={handleLogin}>
-        <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-        />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-        />
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          placeholder="Confirm Password"
-        />
-        <div
-          style={{
-            gap: "10px",
-            justifyContent: "flex-end",
-            flexDirection: "row",
-          }}
-        >
-          <p style={{ marginBottom: 0 }}>Not Registered?</p>
-          <Link
-            to={"/register"}
-            style={{ textDecoration: "none", alignItems: "center" }}
-          >
-            Register Now
-          </Link>
-        </div>
-        <div style={{ justifyContent: "center", alignItems: "center" }}>
-          <button type="submit">Login</button>
-        </div>
-      </form>
+    <div className="from-light-gradient-1 via-light-gradient-2 to-light-gradient-3 box-border flex h-screen justify-center bg-gradient-to-tr pt-32 text-gray-600 dark:bg-gradient-to-tl dark:from-dark-gradient-1 dark:via-dark-gradient-2 dark:to-dark-gradient-3 dark:text-gray-400">
+      <div className="rounded-lg border-gray-100 bg-gray-600 bg-opacity-10 p-6 shadow-md backdrop-blur-md backdrop-filter dark:bg-gray-800">
+        <h1 className="flex justify-center pb-5 text-4xl">Login</h1>
+        <form onSubmit={handleLogin}>
+          {/* Email Field */}
+          <div className="relative m-7 flex h-16 items-center">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black outline-none focus:border-blue-500"
+              placeholder="Email"
+              required
+            />
+            <FaUser className="absolute left-3 text-gray-500" />
+          </div>
+
+          {/* Password Field */}
+          <div className="relative m-7 flex h-16 items-center">
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black outline-none focus:border-blue-500"
+              placeholder="Password"
+              required
+            />
+            <FaLock className="absolute left-3 text-gray-500" />
+          </div>
+
+          {/* Remember Me & Forgot Password */}
+          <div className="flex items-center justify-between px-7">
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2 cursor-pointer accent-blue-600"
+              />
+              Remember me
+            </label>
+            <a
+              href="#"
+              className="text-blue-600 text-opacity-60 hover:underline dark:text-blue-800"
+            >
+              Forgot Password?
+            </a>
+          </div>
+
+          {/* Login Button */}
+          <div className="mt-5 flex justify-center">
+            <button
+              type="submit"
+              className="w-full rounded-lg bg-blue-600 bg-opacity-60 py-2 text-white transition-colors hover:bg-blue-700 hover:bg-opacity-80 dark:bg-blue-800"
+            >
+              Login
+            </button>
+          </div>
+
+          {/* Register Link */}
+          <div className="mt-5 flex justify-center">
+            <span>Don't have an account? </span>
+            <Link
+              to="/register"
+              className="ml-2 text-blue-600 text-opacity-60 hover:underline dark:text-blue-800"
+            >
+              Register Now
+            </Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
