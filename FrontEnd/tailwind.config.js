@@ -18,16 +18,16 @@ export default {
         "dark-gradient-2": "#1976D2",
         "dark-gradient-3": "#1A1A1A",
 
-        lippu: "#333333",
-        dippu: "FFFFFF",
+        // lippu: "#333333",
+        // dippu: "FFFFFF",
 
-        "nav-bar-bg-grad-light-1": "#135DEG",
-        "nav-bar-bg-grad-light-2": "#E0F7FA",
-        "nav-bar-bg-grad-light-3": "#B3E5FC",
+        // "nav-bar-bg-grad-light-1": "#E0F7FA",
+        // "nav-bar-bg-grad-light-2": "#B3E5FC",
+        // "nav-bar-bg-grad-light-3": "#FFFFFF",
 
-        "nav-bar-bg-grad-dark-1": "#007BFF",
-        "nav-bar-bg-grad-dark-2": "#007BFF",
-        "nav-bar-bg-grad-dark-3": "#007BFF",
+        // "nav-bar-bg-grad-dark-1": "#007BFF",
+        // "nav-bar-bg-grad-dark-2": "#007BFF",
+        // "nav-bar-bg-grad-dark-3": "#007BFF",
 
         "nav-bar-btn-grad-light-start": "#007BFF",
         "nav-bar-btn-grad-light-end": "#5B9BD5",

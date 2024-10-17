@@ -25,5 +25,5 @@ const root = ReactDOM.createRoot(container);
 root.render(
   <React.StrictMode>
     <AppWrapper />
-  </React.StrictMode>
+  </React.StrictMode>,
 );

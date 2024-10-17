@@ -35,7 +35,7 @@ const Login = () => {
   }
 
   return (
-    <div className="from-light-gradient-1 via-light-gradient-2 to-light-gradient-3 box-border flex h-screen justify-center bg-gradient-to-tr pt-32 text-gray-600 dark:bg-gradient-to-tl dark:from-dark-gradient-1 dark:via-dark-gradient-2 dark:to-dark-gradient-3 dark:text-gray-400">
+    <div className="box-border flex h-screen justify-center bg-gradient-to-tr from-light-gradient-1 via-light-gradient-2 to-light-gradient-3 pb-10 pt-32 text-gray-600 dark:bg-gradient-to-tl dark:from-dark-gradient-1 dark:via-dark-gradient-2 dark:to-dark-gradient-3 dark:text-gray-400">
       <div className="rounded-lg border-gray-100 bg-gray-600 bg-opacity-10 p-6 shadow-md backdrop-blur-md backdrop-filter dark:bg-gray-800">
         <h1 className="flex justify-center pb-5 text-4xl">Login</h1>
         <form onSubmit={handleLogin}>
