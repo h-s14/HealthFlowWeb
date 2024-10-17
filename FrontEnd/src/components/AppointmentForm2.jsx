@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+
 const AppointmentForm2 = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -76,7 +77,9 @@ const AppointmentForm2 = () => {
       toast.success(data.message);
       navigateTo("/");
     } catch (error) {
-      toast.error(error.responst.data.message);
+      console.error("Error submitting form", error); // Debug log
+      toast.error(error.response?.data?.message || "Submission failed");
+      // toast.error(error.responst.data.message);
     }
   };
   return (
@@ -172,10 +175,10 @@ const AppointmentForm2 = () => {
                 .map((doctor, index) => {
                   return (
                     <option
-                      value={`${doctor.firstName} ${doctor.doctorLastName}`}
+                      value={`${doctor.firstName} ${doctor.LastName}`}
                       key={index}
                     >
-                      {doctor.firstName} {doctor.doctorLastName}
+                      {doctor.firstName} {doctor.lastName}
                     </option>
                   );
                 })}

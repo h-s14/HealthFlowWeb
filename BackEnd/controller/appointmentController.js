@@ -1,4 +1,3 @@
-import app from "../app.js";
 import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
 import ErrorHandler from "../middlewares/errorMiddleware.js";
 import { Appointment } from "../models/appointmentSchema.js";
@@ -43,16 +42,18 @@ export const postAppointment = catchAsyncErrors(async (req, res, next) => {
     doctorDepartment: department,
   });
   if (isConflict.length === 0) {
-    return new ErrorHandler("Doctor Not found!", 404);
+    return next(new ErrorHandler("Doctor Not found!", 404));
   }
   if (isConflict.length > 1) {
-    return new ErrorHandler(
-      "Doctor Conflict! Please Contract Through Phone or E-mail",
-      501
+    return next(
+      new ErrorHandler(
+        "Doctor Conflict! Please Contract Through Phone or E-mail",
+        501
+      )
     );
   }
   const doctorId = isConflict[0]._id;
-  // const patientId = req.user._id;
+  const patientId = req.user._id;
   const appointment = await Appointment.create({
     firstName,
     lastName,
@@ -74,6 +75,7 @@ export const postAppointment = catchAsyncErrors(async (req, res, next) => {
   });
   res.status(200).json({
     success: true,
+    appointment,
     message: "Appointment Scheduled Successfully",
   });
 });
@@ -108,7 +110,7 @@ export const updateAppointmentStatus = catchAsyncErrors(
 
 export const deleteAppointment = catchAsyncErrors(async (req, res, next) => {
   const { id } = req.params;
-  let appointment = await Appointment.findById(id);
+  const appointment = await Appointment.findById(id);
   if (!appointment) {
     return next(new ErrorHandler("Appointment Not Found", 404));
   }

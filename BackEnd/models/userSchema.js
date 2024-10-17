@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
     maxLength: [12, "UID must be 12-Digits"],
   },
   dob: {
-    type: Date,
+    type: String,
     required: [true, "DOB is required"],
   },
   gender: {

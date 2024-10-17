@@ -30,7 +30,7 @@ const appointmentSchema = new mongoose.Schema({
     maxLength: [12, "UID must be 5-Digits"],
   },
   dob: {
-    type: Date,
+    type: String,
     required: [true, "DOB is required"],
   },
   gender: {
@@ -39,7 +39,7 @@ const appointmentSchema = new mongoose.Schema({
     enum: ["Male", "Female", "Prefer Not Say"],
   },
   appointment_date: {
-    type: Date,
+    type: String,
     required: true,
   },
   department: {
@@ -54,16 +54,16 @@ const appointmentSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  address: {
+    type: String,
+    required: true,
+  },
   doctorId: {
     type: mongoose.Schema.ObjectId,
     required: true,
   },
   patientId: {
     type: mongoose.Schema.ObjectId,
-    required: true,
-  },
-  address: {
-    type: String,
     required: true,
   },
   status: {

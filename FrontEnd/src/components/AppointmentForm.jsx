@@ -160,15 +160,14 @@ const AppointmentForm = () => {
                     id="dob"
                     className="z-10 h-full w-full border-black border-opacity-20 bg-transparent text-black outline-none focus:border-blue-500"
                     value={dob}
-                    // value={dob ? dob.toISOString().split("T")[0] : ""}
                     onChange={(e) => setDob(e.target.value)}
                     required
-                    // style={{ opacity: 0 }}
+                    style={{ opacity: 0 }}
                   />
                   <span
                     className={`absolute left-10 top-5 text-gray-500 transition-all duration-200 ease-in-out ${dob ? "visible" : "invisible"}`}
                   >
-                    {/* {dob ? new Date(dob).toLocaleDateString() : "Birth Date"} */}
+                    {dob ? new Date(dob).toLocaleDateString() : "Birth Date"}
                   </span>
                 </span>
                 <label
@@ -318,10 +317,10 @@ const AppointmentForm = () => {
                       .map((doctor, index) => {
                         return (
                           <option
-                            value={`${doctor.firstName} ${doctor.doctorLastName}`}
+                            value={`${doctor.firstName} ${doctor.lastName}`}
                             key={index}
                           >
-                            {doctor.firstName} {doctor.doctorLastName}
+                            {doctor.firstName} {doctor.lastName}
                           </option>
                         );
                       })}
