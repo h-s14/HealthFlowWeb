@@ -35,9 +35,11 @@ const Login = () => {
   }
 
   return (
-    <div className="box-border flex h-screen justify-center bg-gradient-to-tr from-light-gradient-1 via-light-gradient-2 to-light-gradient-3 pb-10 pt-32 text-gray-600 dark:bg-gradient-to-tl dark:from-dark-gradient-1 dark:via-dark-gradient-2 dark:to-dark-gradient-3 dark:text-gray-400">
-      <div className="rounded-lg border-gray-100 bg-gray-600 bg-opacity-10 p-6 shadow-md backdrop-blur-md backdrop-filter dark:bg-gray-800">
-        <h1 className="flex justify-center pb-5 text-4xl">Login</h1>
+    <div className="box-border flex h-screen justify-center bg-gradient-to-tr from-light-gradient-1 via-light-gradient-2 to-light-gradient-3 pb-10 pt-32 text-gray-600 dark:bg-gradient-to-tl dark:from-dark-gradient-1 dark:via-dark-gradient-2 dark:to-dark-gradient-3 dark:text-gray-600">
+      <div className="bg-login-form-bg dark:bg-login-form-bg-dark rounded-xl bg-opacity-10 p-6 shadow-md backdrop-blur-md backdrop-filter">
+        <h1 className="text-input-text-light dark:text-input-text-dark flex justify-center pb-5 text-4xl">
+          Login
+        </h1>
         <form onSubmit={handleLogin}>
           {/* Email Field */}
           <div className="relative m-7 flex h-16 items-center">
@@ -45,7 +47,7 @@ const Login = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black outline-none focus:border-blue-500"
+              className="text-input-text-light placeholder-input-text-light dark:placeholder-input-text-dark dark:text-input-text-dark h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 outline-none focus:border-blue-500"
               placeholder="Email"
               required
             />
@@ -58,7 +60,7 @@ const Login = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black outline-none focus:border-blue-500"
+              className="text-input-text-light placeholder-input-text-light dark:placeholder-input-text-dark dark:text-input-text-dark h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 outline-none focus:border-blue-500"
               placeholder="Password"
               required
             />
@@ -67,16 +69,13 @@ const Login = () => {
 
           {/* Remember Me & Forgot Password */}
           <div className="flex items-center justify-between px-7">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2 cursor-pointer accent-blue-600"
-              />
+            <label className="text-input-text-light dark:text-input-text-dark flex items-center">
+              <input type="checkbox" className="mr-2 cursor-pointer" />
               Remember me
             </label>
             <a
               href="#"
-              className="text-blue-600 text-opacity-60 hover:underline dark:text-blue-800"
+              className="text-input-text-light dark:text-input-text-dark pl-14 text-opacity-40 hover:underline"
             >
               Forgot Password?
             </a>
@@ -86,7 +85,7 @@ const Login = () => {
           <div className="mt-5 flex justify-center">
             <button
               type="submit"
-              className="w-full rounded-lg bg-blue-600 bg-opacity-60 py-2 text-white transition-colors hover:bg-blue-700 hover:bg-opacity-80 dark:bg-blue-800"
+              className="bg-login-button-bg-light text-login-button-text-light dark:text-login-button-text-dark hover:bg-login-button-hover-bg-light dark:hover:bg-login-button-hover-bg-dark dark:bg-login-button-bg-dark w-[85%] rounded-lg bg-opacity-60 py-2 transition-colors hover:bg-opacity-80"
             >
               Login
             </button>
@@ -94,10 +93,12 @@ const Login = () => {
 
           {/* Register Link */}
           <div className="mt-5 flex justify-center">
-            <span>Don't have an account? </span>
+            <span className="text-input-text-light dark:text-input-text-dark">
+              Don't have an account?{" "}
+            </span>
             <Link
               to="/register"
-              className="ml-2 text-blue-600 text-opacity-60 hover:underline dark:text-blue-800"
+              className="text-input-text-light dark:text-input-text-dark ml-4 pl-8 text-opacity-40 hover:underline"
             >
               Register Now
             </Link>

@@ -13,6 +13,7 @@ import NavBar from "./components/navBar/NavBar";
 import { Context } from "./main";
 import axios from "axios";
 import Footer from "./components/Footer";
+import Footers from "./components/Footers";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
         </Routes>
         <Footer />
+
         <ToastContainer position="top-center" />
         <button
           className="fixed bottom-5 right-5 flex h-16 w-16 items-center justify-center rounded-full border-2 border-black border-opacity-20 bg-gray-400 bg-opacity-10 text-3xl text-black shadow-lg outline-none backdrop-blur-md backdrop-filter transition dark:bg-black dark:bg-opacity-60 dark:text-white"

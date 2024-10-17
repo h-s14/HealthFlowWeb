@@ -27,7 +27,7 @@ const Auths = () => {
     navigateTo("/login");
   };
   return (
-    <div className="shadow-2x1 from-nav-bar-btn-grad-light-start to-nav-bar-btn-grad-light-end text-nav-bar-btn-light-txt hover:from-nav-bar-btn-grad-light-hover-start hover:to-nav-bar-btn-grad-light-hover-end dark:from-nav-bar-btn-grad-dark-start dark:to-nav-bar-btn-grad-dark-end dark:hover:from-nav-bar-btn-grad-dark-hover-start dark:hover:to-nav-bar-btn-grad-dark-hover-end rounded-3xl bg-gradient-to-r px-6 py-1 text-lg font-semibold">
+    <div className="text-nav-bar-btn-light-txt rounded-3xl bg-gradient-to-r from-nav-bar-btn-grad-light-start to-nav-bar-btn-grad-light-end px-6 py-1 text-lg font-semibold shadow-2xl outline-gray-900 hover:from-nav-bar-btn-grad-light-hover-start hover:to-nav-bar-btn-grad-light-hover-end dark:from-nav-bar-btn-grad-dark-start dark:to-nav-bar-btn-grad-dark-end dark:hover:from-nav-bar-btn-grad-dark-hover-start dark:hover:to-nav-bar-btn-grad-dark-hover-end">
       {isAuthenticated ? (
         <button className="" onClick={handleLogout}>
           LOGOUT

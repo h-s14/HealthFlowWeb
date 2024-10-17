@@ -19,7 +19,7 @@ const Home = () => {
   const departmentsRef = useRef(null);
   const messageRef = useRef(null);
   return (
-    <div className="bg-gradient-to-br from-light-gradient-1 via-light-gradient-2 to-light-gradient-3 pt-32 text-[#333333] dark:bg-gradient-to-tl dark:from-dark-gradient-1 dark:via-dark-gradient-2 dark:to-dark-gradient-3 dark:text-[#E0E0E0]">
+    <div className="text-body-text-light dark:text-body-text-dark bg-gradient-to-br from-light-gradient-1 via-light-gradient-2 to-light-gradient-3 pt-32 dark:bg-gradient-to-tl dark:from-dark-gradient-1 dark:via-dark-gradient-2 dark:to-dark-gradient-3">
       {/* -----------------------Hero/Home Page----------------------- */}
       <div>
         <Hero />

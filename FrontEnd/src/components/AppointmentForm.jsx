@@ -86,7 +86,7 @@ const AppointmentForm = () => {
     }
   };
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center pb-16">
       <div className="box-border flex w-[90%] items-center justify-center px-5 pt-24 text-gray-500 dark:text-gray-400">
         <div className="rounded-lg border-gray-100 bg-gray-600 bg-opacity-10 p-6 shadow-md backdrop-blur-md backdrop-filter dark:bg-gray-800">
           <h1 className="flex justify-center pb-5 text-4xl">
@@ -100,7 +100,7 @@ const AppointmentForm = () => {
               <div className="relative m-7 flex h-16 w-[45%] items-center">
                 <input
                   type="text"
-                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
+                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
                   placeholder="First Name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
@@ -111,7 +111,7 @@ const AppointmentForm = () => {
               <div className="relative m-7 flex h-16 w-[45%] items-center">
                 <input
                   type="text"
-                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black placeholder-gray-600 outline-none focus:border-blue-500 dark:placeholder-gray-500"
+                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
                   placeholder="Last Name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
@@ -122,7 +122,7 @@ const AppointmentForm = () => {
               <div className="relative m-7 flex h-16 w-[45%] items-center">
                 <input
                   type="Email"
-                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black placeholder-gray-600 outline-none focus:border-blue-500 dark:placeholder-gray-500"
+                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -133,7 +133,7 @@ const AppointmentForm = () => {
               <div className="relative m-7 flex h-16 w-[45%] items-center">
                 <input
                   type="number"
-                  className="number-input no-spinner h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black placeholder-gray-600 outline-none focus:border-blue-500 dark:placeholder-gray-500"
+                  className="number-input no-spinner h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
                   placeholder="Phone no."
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
@@ -144,7 +144,7 @@ const AppointmentForm = () => {
               <div className="relative m-7 flex h-16 w-[45%] items-center">
                 <input
                   type="number"
-                  className="number-input no-spinner h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black placeholder-gray-600 outline-none focus:border-blue-500 dark:placeholder-gray-500"
+                  className="number-input no-spinner h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
                   placeholder="UID"
                   value={uid}
                   onChange={(e) => setUid(e.target.value)}
@@ -154,11 +154,11 @@ const AppointmentForm = () => {
               {/* DOB Field */}
               <div className="relative m-7 flex h-16 w-[45%] items-center">
                 <Calendar className="absolute right-5 cursor-pointer" />
-                <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black outline-none focus:border-blue-500">
+                <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 outline-none focus:border-blue-500">
                   <input
                     type="date"
                     id="dob"
-                    className="z-10 h-full w-full border-black border-opacity-20 bg-transparent text-black outline-none focus:border-blue-500"
+                    className="z-10 h-full w-full border-black border-opacity-20 bg-transparent text-gray-600 outline-none focus:border-blue-500"
                     value={dob}
                     onChange={(e) => setDob(e.target.value)}
                     required
@@ -181,9 +181,9 @@ const AppointmentForm = () => {
               </div>
               {/* Gender Field */}
               <div className="relative m-7 flex h-16 w-[45%] items-center">
-                <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-4 text-black outline-none focus:border-blue-500">
+                <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-4 text-gray-600 outline-none focus:border-blue-500">
                   <select
-                    className="z-3 h-full w-full cursor-pointer bg-transparent text-black outline-none focus:border-blue-500"
+                    className="z-3 h-full w-full cursor-pointer bg-transparent text-gray-600 outline-none focus:border-blue-500"
                     id="gender-val"
                     value={gender}
                     style={{ opacity: 0 }}
@@ -221,11 +221,11 @@ const AppointmentForm = () => {
               {/* Appointment Date Field */}
               <div className="relative m-7 flex h-16 w-[45%] items-center">
                 <Calendar className="absolute right-5 cursor-pointer" />
-                <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black outline-none focus:border-blue-500">
+                <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 outline-none focus:border-blue-500">
                   <input
                     type="date"
                     id="appointment-date"
-                    className="h-full w-full border-black border-opacity-20 bg-transparent text-black outline-none focus:border-blue-500"
+                    className="h-full w-full border-black border-opacity-20 bg-transparent text-gray-600 outline-none focus:border-blue-500"
                     value={appointmentDate}
                     onChange={(e) => setAppointmentDate(e.target.value)}
                     required
@@ -251,9 +251,9 @@ const AppointmentForm = () => {
 
               {/* Department Field */}
               <div className="relative m-7 flex h-16 w-[45%] items-center">
-                <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-4 text-black outline-none focus:border-blue-500">
+                <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-4 text-gray-600 outline-none focus:border-blue-500">
                   <select
-                    className="h-full w-full cursor-pointer rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black outline-none focus:border-blue-500"
+                    className="h-full w-full cursor-pointer rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 outline-none focus:border-blue-500"
                     id="departments-drp"
                     value={department}
                     style={{ opacity: 0 }}
@@ -294,9 +294,9 @@ const AppointmentForm = () => {
 
               {/* Doctor Field */}
               <div className="relative m-7 flex h-16 w-[45%] items-center">
-                <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-4 text-black outline-none focus:border-blue-500">
+                <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-4 text-gray-600 outline-none focus:border-blue-500">
                   <select
-                    className="h-full w-full cursor-pointer rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black outline-none focus:border-blue-500"
+                    className="h-full w-full cursor-pointer rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 outline-none focus:border-blue-500"
                     id="doctors-dc"
                     style={{ opacity: 0 }}
                     value={`${doctorFirstName} ${doctorLastName}`}
@@ -347,7 +347,7 @@ const AppointmentForm = () => {
                 <textarea
                   rows={5}
                   type="text"
-                  className="text:black h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 pt-5 text-black placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
+                  className="text:black h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 pt-5 text-gray-600 placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
                   placeholder="Address"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
@@ -371,7 +371,7 @@ const AppointmentForm = () => {
             <div className="my-2 flex justify-center">
               <button
                 type="submit"
-                className="w-1/4 rounded-lg bg-blue-600 bg-opacity-60 py-2 text-white transition-colors hover:bg-blue-700 hover:bg-opacity-80 dark:bg-blue-800"
+                className="bg-login-button-bg-light dark:bg-login-button-bg-dark hover:bg-login-button-hover-bg-light dark:hover:bg-login-button-hover-bg-dark w-1/4 rounded-lg bg-opacity-60 py-2 text-white transition-colors hover:bg-opacity-80"
               >
                 Get Appointment
               </button>

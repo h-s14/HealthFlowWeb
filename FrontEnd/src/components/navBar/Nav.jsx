@@ -7,17 +7,17 @@ const NavLinks = () => {
   return (
     <>
       <NavLink to="/">
-        <span className="hover:bg-nav-bar-bg-hover-light hover:text-nav-bar-text-hover-light dark:hover:bg-nav-bar-bg-hover-dark dark:hover:text-nav-bar-text-hover-dark rounded-full p-1 transition duration-500 hover:bg-opacity-60 hover:p-2 dark:hover:bg-opacity-60">
+        <span className="rounded-full p-1 transition duration-500 hover:bg-nav-bar-bg-hover-light hover:bg-opacity-60 hover:p-2 hover:text-nav-bar-link-hover-light dark:hover:bg-nav-bar-bg-hover-dark dark:hover:bg-opacity-60 dark:hover:text-nav-bar-link-hover-dark">
           Home
         </span>
       </NavLink>
       <NavLink to="/appointment">
-        <span className="hover:bg-nav-bar-bg-hover-light hover:text-nav-bar-text-hover-light dark:hover:bg-nav-bar-bg-hover-dark dark:hover:text-nav-bar-text-hover-dark rounded-full p-1 transition duration-500 hover:bg-opacity-60 hover:p-2 dark:hover:bg-opacity-60">
+        <span className="rounded-full p-1 transition duration-500 hover:bg-nav-bar-bg-hover-light hover:bg-opacity-60 hover:p-2 hover:text-nav-bar-link-hover-light dark:hover:bg-nav-bar-bg-hover-dark dark:hover:bg-opacity-60 dark:hover:text-nav-bar-link-hover-dark">
           Appointment
         </span>
       </NavLink>
       <NavLink to="/about">
-        <span className="hover:bg-nav-bar-bg-hover-light hover:text-nav-bar-text-hover-light dark:hover:bg-nav-bar-bg-hover-dark dark:hover:text-nav-bar-text-hover-dark rounded-full p-1 transition duration-500 hover:bg-opacity-60 hover:p-2 dark:hover:bg-opacity-60">
+        <span className="rounded-full p-1 transition duration-500 hover:bg-nav-bar-bg-hover-light hover:bg-opacity-60 hover:p-2 hover:text-nav-bar-link-hover-light dark:hover:bg-nav-bar-bg-hover-dark dark:hover:bg-opacity-60 dark:hover:text-nav-bar-link-hover-dark">
           About Us
         </span>
       </NavLink>
