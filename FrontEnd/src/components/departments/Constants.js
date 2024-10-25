@@ -1,75 +1,60 @@
+import { RxCrop } from "react-icons/rx";
 import {
-  RxCrop,
-  RxDesktop,
-  RxPencil2,
-  RxReader,
-  RxRocket,
-  RxAccessibility,
-} from "react-icons/rx";
-
-import slide_img_1 from "/departments/nature-1.jpg";
-import slide_img_2 from "/departments/nature-1.jpg";
-import slide_img_3 from "/departments/nature-1.jpg";
-import slide_img_4 from "/departments/cardio.jpg";
-import slide_img_5 from "/departments/cardio.jpg";
-import slide_img_6 from "/departments/cardio.jpg";
-import slide_img_7 from "/departments/cardio.jpg";
-import slide_img_8 from "/departments/cardio.jpg";
-import slide_img_9 from "/departments/cardio.jpg";
+  PawPrint,
+  Bone,
+  HeartPulse,
+  Brain,
+  Syringe,
+  Siren,
+  Accessibility,
+  Pill,
+  Ear,
+} from "lucide-react";
 
 export const ServiceData = [
   {
     icon: RxCrop,
-    title: "Development",
-    content: "Lorem ipsum dolor sit /amet, consectetur adipiscing elit.",
-    backgroundImage: slide_img_1,
+    title: "Pediatrics",
+    bgIcon: PawPrint,
   },
   {
-    icon: RxPencil2,
-    title: "Branding",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    backgroundImage: slide_img_2,
+    icon: RxCrop,
+    title: "Orthopedics",
+    bgIcon: Bone,
   },
   {
-    icon: RxDesktop,
-    title: "Design",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    backgroundImage: slide_img_3,
+    icon: RxCrop,
+    title: "Cardiology",
+    bgIcon: HeartPulse,
   },
   {
-    icon: RxReader,
-    title: "Seo",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    backgroundImage: slide_img_4,
+    icon: RxCrop,
+    title: "Neurology",
+    bgIcon: Brain,
   },
   {
-    icon: RxAccessibility,
-    title: "Management",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    backgroundImage: slide_img_5,
+    icon: RxCrop,
+    title: "Oncology",
+    bgIcon: Syringe,
   },
   {
-    icon: RxRocket,
-    title: "Production",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    backgroundImage: slide_img_6,
+    icon: RxCrop,
+    title: "Radiology",
+    bgIcon: Siren,
   },
   {
-    icon: RxRocket,
-    title: "Tripp",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    backgroundImage: slide_img_7,
+    icon: RxCrop,
+    title: "Physiotherapy",
+    bgIcon: Accessibility,
   },
   {
-    icon: RxRocket,
-    title: "missoi",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    backgroundImage: slide_img_8,
+    icon: RxCrop,
+    title: "Dermatology",
+    bgIcon: Pill,
   },
   {
-    icon: RxRocket,
-    title: "noi",
-    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    backgroundImage: slide_img_9,
+    icon: RxCrop,
+    title: "ENT",
+    bgIcon: Ear,
   },
 ];

@@ -1,6 +1,5 @@
 import React from "react";
 import AppointmentForm from "../components/AppointmentForm";
-import AppointmentForm2 from "../components/AppointmentForm2";
 const Appointment = () => {
   return (
     <>

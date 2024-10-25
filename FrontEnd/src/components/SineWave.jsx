@@ -1,7 +1,7 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 
 const SineWave = () => {
-  const width = 1350;
+  const [width, setWidth] = useState(window.innerWidth * 0.9);
   const height = 100;
   const frequency = 0.03; // Adjust frequency for more/less waves
   const amplitude = 20; // Adjust amplitude for height of wave
@@ -11,7 +11,14 @@ const SineWave = () => {
     const y = amplitude * Math.sin(frequency * x) + height / 2;
     return `${x},${y}`;
   }).join(" ");
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
 
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <svg width={width} height={height}>
       {/* Define a linear gradient */}

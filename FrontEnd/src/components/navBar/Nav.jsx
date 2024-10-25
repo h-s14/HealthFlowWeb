@@ -6,20 +6,23 @@ import MenuComp from "./MenuComp";
 const NavLinks = () => {
   return (
     <>
-      <NavLink to="/">
-        <span className="rounded-full p-1 transition duration-500 hover:bg-nav-bar-bg-hover-light hover:bg-opacity-60 hover:p-2 hover:text-nav-bar-link-hover-light dark:hover:bg-nav-bar-bg-hover-dark dark:hover:bg-opacity-60 dark:hover:text-nav-bar-link-hover-dark">
-          Home
-        </span>
+      <NavLink
+        to="/"
+        className="hover:bg-nav-bar-bg-hover-light dark:hover:bg-nav-bar-bg-hover-dark rounded-full p-1 transition duration-500 hover:scale-110 hover:bg-opacity-60 hover:text-nav-bar-link-hover-light dark:hover:bg-opacity-60 dark:hover:text-nav-bar-link-hover-dark"
+      >
+        Home
       </NavLink>
-      <NavLink to="/appointment">
-        <span className="rounded-full p-1 transition duration-500 hover:bg-nav-bar-bg-hover-light hover:bg-opacity-60 hover:p-2 hover:text-nav-bar-link-hover-light dark:hover:bg-nav-bar-bg-hover-dark dark:hover:bg-opacity-60 dark:hover:text-nav-bar-link-hover-dark">
-          Appointment
-        </span>
+      <NavLink
+        to="/appointment"
+        className="hover:bg-nav-bar-bg-hover-light dark:hover:bg-nav-bar-bg-hover-dark rounded-full p-1 transition duration-500 hover:scale-110 hover:bg-opacity-60 hover:text-nav-bar-link-hover-light dark:hover:bg-opacity-60 dark:hover:text-nav-bar-link-hover-dark"
+      >
+        Appointment
       </NavLink>
-      <NavLink to="/about">
-        <span className="rounded-full p-1 transition duration-500 hover:bg-nav-bar-bg-hover-light hover:bg-opacity-60 hover:p-2 hover:text-nav-bar-link-hover-light dark:hover:bg-nav-bar-bg-hover-dark dark:hover:bg-opacity-60 dark:hover:text-nav-bar-link-hover-dark">
-          About Us
-        </span>
+      <NavLink
+        to="/about"
+        className="hover:bg-nav-bar-bg-hover-light dark:hover:bg-nav-bar-bg-hover-dark rounded-full p-1 transition duration-500 hover:scale-110 hover:bg-opacity-60 hover:text-nav-bar-link-hover-light dark:hover:bg-opacity-60 dark:hover:text-nav-bar-link-hover-dark"
+      >
+        About Us
       </NavLink>
     </>
   );

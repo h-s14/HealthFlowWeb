@@ -1,9 +1,10 @@
-import { React, useEffect } from "react";
+import { React, useContext, useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
-import { Calendar, ChevronDown, Pointer } from "lucide-react";
+import { Calendar, ChevronDown } from "lucide-react";
+import { Context } from "../main";
 
 const AppointmentForm = () => {
   const [firstName, setFirstName] = useState("");
@@ -20,6 +21,10 @@ const AppointmentForm = () => {
   const [address, setAddress] = useState("");
   const [hasVisited, setHasVisited] = useState("");
 
+  const navigateTo = useNavigate();
+  const [doctors, setDoctors] = useState([]);
+  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+
   const departmentsArray = [
     "Select Department",
     "Pediatrics",
@@ -33,8 +38,19 @@ const AppointmentForm = () => {
     "ENT",
   ];
 
-  const navigateTo = useNavigate();
-  const [doctors, setDoctors] = useState([]);
+  useEffect(() => {
+    const checkAuthStatus = async () => {
+      try {
+        if (!isAuthenticated) {
+          navigateTo("/login");
+        }
+      } catch (error) {
+        navigateTo("/login");
+      }
+    };
+
+    checkAuthStatus();
+  }, [navigateTo]);
 
   useEffect(() => {
     const fetchDoctors = async () => {
@@ -48,7 +64,6 @@ const AppointmentForm = () => {
   }, []);
 
   const handleAppointment = async (e) => {
-    console.log("Form Submision Initiated");
     e.preventDefault();
     try {
       const hasVisitedBool = Boolean(hasVisited);
@@ -80,8 +95,6 @@ const AppointmentForm = () => {
       toast.success(data.message);
       navigateTo("/");
     } catch (error) {
-      // toast.error(error.response.data.message);
-      console.error("Error submitting form", error); // Debug log
       toast.error(error.response?.data?.message || "Submission failed");
     }
   };
@@ -97,7 +110,7 @@ const AppointmentForm = () => {
               {/*
                */}
               {/* First Name Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-[90%] md:w-[44%]">
                 <input
                   type="text"
                   className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
@@ -108,7 +121,7 @@ const AppointmentForm = () => {
                 />
               </div>
               {/* Last Name Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-[90%] md:w-[44%]">
                 <input
                   type="text"
                   className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
@@ -119,7 +132,7 @@ const AppointmentForm = () => {
                 />
               </div>
               {/* Email Name Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-[90%] md:w-[44%]">
                 <input
                   type="Email"
                   className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
@@ -130,7 +143,7 @@ const AppointmentForm = () => {
                 />
               </div>
               {/* Phone Number Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-[90%] md:w-[44%]">
                 <input
                   type="number"
                   className="number-input no-spinner h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
@@ -141,7 +154,7 @@ const AppointmentForm = () => {
                 />
               </div>
               {/* UID Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-[90%] md:w-[44%]">
                 <input
                   type="number"
                   className="number-input no-spinner h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 placeholder-gray-600 outline-none focus:border-blue-500 dark:text-gray-500 dark:placeholder-gray-500"
@@ -152,7 +165,7 @@ const AppointmentForm = () => {
                 />
               </div>
               {/* DOB Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-[90%] md:w-[44%]">
                 <Calendar className="absolute right-5 cursor-pointer" />
                 <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 outline-none focus:border-blue-500">
                   <input
@@ -180,7 +193,7 @@ const AppointmentForm = () => {
                 </label>
               </div>
               {/* Gender Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-[90%] md:w-[44%]">
                 <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-4 text-gray-600 outline-none focus:border-blue-500">
                   <select
                     className="z-3 h-full w-full cursor-pointer bg-transparent text-gray-600 outline-none focus:border-blue-500"
@@ -219,7 +232,7 @@ const AppointmentForm = () => {
               </div>
 
               {/* Appointment Date Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-[90%] md:w-[44%]">
                 <Calendar className="absolute right-5 cursor-pointer" />
                 <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 outline-none focus:border-blue-500">
                   <input
@@ -250,7 +263,7 @@ const AppointmentForm = () => {
               </div>
 
               {/* Department Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-[90%] md:w-[44%]">
                 <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-4 text-gray-600 outline-none focus:border-blue-500">
                   <select
                     className="h-full w-full cursor-pointer rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 outline-none focus:border-blue-500"
@@ -293,7 +306,7 @@ const AppointmentForm = () => {
               </div>
 
               {/* Doctor Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-[90%] md:w-[44%]">
                 <span className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-4 text-gray-600 outline-none focus:border-blue-500">
                   <select
                     className="h-full w-full cursor-pointer rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-gray-600 outline-none focus:border-blue-500"
@@ -371,7 +384,7 @@ const AppointmentForm = () => {
             <div className="my-2 flex justify-center">
               <button
                 type="submit"
-                className="bg-login-button-bg-light dark:bg-login-button-bg-dark hover:bg-login-button-hover-bg-light dark:hover:bg-login-button-hover-bg-dark w-1/4 rounded-lg bg-opacity-60 py-2 text-white transition-colors hover:bg-opacity-80"
+                className="w-1/4 rounded-lg bg-login-button-bg-light bg-opacity-60 py-2 text-white transition-colors hover:bg-login-button-hover-bg-light hover:bg-opacity-80 dark:bg-login-button-bg-dark dark:hover:bg-login-button-hover-bg-dark"
               >
                 Get Appointment
               </button>

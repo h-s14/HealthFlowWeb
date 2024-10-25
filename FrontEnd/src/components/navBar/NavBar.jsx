@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "./Logo";
 import Nav from "./Nav";
 import Auths from "./Auths";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 const NavBar = () => {
   return (
     <>

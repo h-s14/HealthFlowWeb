@@ -1,19 +1,21 @@
-import { React, useContext, useEffect, useState } from "react";
 import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+
+import { React, useContext, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { IoMdSunny, IoMdMoon } from "react-icons/io";
+import { ToastContainer } from "react-toastify";
+import { Context } from "./main";
+
+import NavBar from "./components/navBar/NavBar";
 import Home from "./pages/Home";
 import Appointment from "./pages/Appointment";
 import AboutUs from "./pages/AboutUs";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import NavBar from "./components/navBar/NavBar";
-import { Context } from "./main";
-import axios from "axios";
 import Footer from "./components/Footer";
-import Footers from "./components/Footers";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -38,7 +40,7 @@ const App = () => {
     fetchUser();
   }, [isAuthenticated]);
   return (
-    <div className={` ${darkMode ? "dark" : ""} scrollbar-hide`}>
+    <div className={`no-scrollbar ${darkMode ? "dark" : ""} `}>
       <Router>
         <NavBar />
         <Routes>
@@ -52,17 +54,13 @@ const App = () => {
 
         <ToastContainer position="top-center" />
         <button
-          className="fixed bottom-5 right-5 flex h-16 w-16 items-center justify-center rounded-full border-2 border-black border-opacity-20 bg-gray-400 bg-opacity-10 text-3xl text-black shadow-lg outline-none backdrop-blur-md backdrop-filter transition dark:bg-black dark:bg-opacity-60 dark:text-white"
+          className="fixed bottom-5 right-5 flex h-16 w-16 items-center justify-center rounded-full border-2 border-black border-opacity-20 bg-gray-400 bg-opacity-10 text-3xl text-black shadow-lg outline-none backdrop-blur-md backdrop-filter dark:bg-black dark:bg-opacity-60 dark:text-white"
           onClick={toggleDarkMode}
         >
           {darkMode ? (
-            <span className="text-sm text-gray-900 dark:text-gray-400">
-              LHT
-            </span>
+            <IoMdMoon className="absolute bottom-[1.15rem] right-[1.1rem] text-2xl" />
           ) : (
-            <span className="text-sm text-gray-900 dark:text-gray-400">
-              DRK
-            </span>
+            <IoMdSunny className="absolute bottom-[0.95rem] right-[0.9rem] text-3xl" />
           )}
         </button>
       </Router>

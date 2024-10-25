@@ -19,7 +19,7 @@ const Home = () => {
   const departmentsRef = useRef(null);
   const messageRef = useRef(null);
   return (
-    <div className="text-body-text-light dark:text-body-text-dark bg-gradient-to-br from-light-gradient-1 via-light-gradient-2 to-light-gradient-3 pt-32 dark:bg-gradient-to-tl dark:from-dark-gradient-1 dark:via-dark-gradient-2 dark:to-dark-gradient-3">
+    <div className="no-scrollbar bg-gradient-to-br from-light-gradient-1 via-light-gradient-2 to-light-gradient-3 pt-32 text-body-text-light dark:bg-gradient-to-tl dark:from-dark-gradient-1 dark:via-dark-gradient-2 dark:to-dark-gradient-3 dark:text-body-text-dark">
       {/* -----------------------Hero/Home Page----------------------- */}
       <div>
         <Hero />
@@ -32,7 +32,7 @@ const Home = () => {
                   behavior: "smooth",
                 });
               }}
-              className="z-10 h-24 w-12 rounded-full border-gray-100 bg-gray-400 bg-opacity-10 backdrop-blur-md backdrop-filter"
+              className="z-10 h-24 w-12 rounded-full border-2 border-gray-400 bg-gray-400 bg-opacity-10 backdrop-blur-md backdrop-filter dark:border-gray-600"
             >
               <img
                 src="/arrow-down.svg"
@@ -41,7 +41,7 @@ const Home = () => {
             </button>
           </div>
           {/* -----------------------Scroll Button End----------------------- */}
-          <div className="py-5 pl-9">
+          <div className="flex justify-center py-5 pl-9">
             <SineWave />
           </div>
         </>
@@ -58,7 +58,7 @@ const Home = () => {
                   behavior: "smooth",
                 });
               }}
-              className="z-10 h-24 w-12 rounded-full border-gray-100 bg-gray-400 bg-opacity-10 backdrop-blur-md backdrop-filter"
+              className="z-10 h-24 w-12 rounded-full border-2 border-gray-400 bg-gray-400 bg-opacity-10 backdrop-blur-md backdrop-filter dark:border-gray-600"
             >
               <img
                 src="/arrow-down.svg"
@@ -67,7 +67,7 @@ const Home = () => {
             </button>
           </div>
           {/* -----------------------Scroll Button End----------------------- */}
-          <div className="py-5 pl-9">
+          <div className="flex justify-center py-5 pl-9">
             <SineWave />
           </div>
         </>
@@ -84,7 +84,7 @@ const Home = () => {
                   behavior: "smooth",
                 });
               }}
-              className="z-10 h-24 w-12 rounded-full border-gray-100 bg-gray-400 bg-opacity-10 backdrop-blur-md backdrop-filter"
+              className="z-10 h-24 w-12 rounded-full border-2 border-gray-400 bg-gray-400 bg-opacity-10 backdrop-blur-md backdrop-filter dark:border-gray-600"
             >
               <img
                 src="/arrow-down.svg"
@@ -95,7 +95,7 @@ const Home = () => {
           {/* -----------------------Scroll Button End----------------------- */}
         </div>
         <DepartmentsCara />
-        <div className="py-5 pl-9">
+        <div className="flex justify-center py-5 pt-3">
           <SineWave />
         </div>
       </div>
@@ -105,25 +105,14 @@ const Home = () => {
         <>
           {/* -----------------------Scroll Button Start----------------------- */}
           <button
-            className="fixed bottom-5 left-5 z-10 flex h-16 w-16 items-center justify-center rounded-full border-2 border-black border-opacity-20 bg-gray-400 bg-opacity-10 text-3xl text-black shadow-lg backdrop-blur-md backdrop-filter transition dark:bg-black dark:bg-opacity-60 dark:text-white"
+            className="fixed bottom-5 left-5 z-10 flex h-16 w-16 items-center justify-center rounded-full border-2 border-black border-opacity-20 bg-gray-400 bg-opacity-10 text-3xl text-black shadow-lg backdrop-blur-md backdrop-filter transition dark:border-gray-600 dark:bg-black dark:bg-opacity-60 dark:text-white"
             onClick={homeScroll}
           >
             <ArrowUp className="mt-1 h-12 w-14 font-bold text-gray-900 dark:text-gray-400" />
           </button>
 
-          {/* <div className="pl-[15%] pt-8">
-            <button
-              onClick={homeScroll}
-              className="z-10 h-24 w-12 rounded-full border-gray-100 bg-gray-400 bg-opacity-10 backdrop-blur-md backdrop-filter"
-            >
-              <img
-                src="/arrow-down.svg"
-                className="mt-12 h-12 w-14 font-bold"
-              />
-            </button>
-          </div> */}
           {/* -----------------------Scroll Button End----------------------- */}
-          <div className="py-5 pl-9">
+          <div className="flex justify-center py-5 pl-9">
             <SineWave />
           </div>
         </>

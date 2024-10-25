@@ -89,7 +89,6 @@ export default {
     },
   },
   plugins: [
-    // Plugin to hide scrollbars
-    require("tailwind-scrollbar-hide"),
+    // require("tailwind-scrollbar-hide"),
   ],
 };

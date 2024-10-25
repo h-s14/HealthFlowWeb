@@ -44,10 +44,10 @@ const MessageForm = () => {
           <form onSubmit={handleMessage}>
             <div className="flex flex-wrap">
               {/* First Name Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-full md:sm:w-full md:w-[44%]">
                 <input
                   type="text"
-                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black outline-none focus:border-blue-500"
+                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 outline-none focus:border-blue-500"
                   placeholder="First Name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
@@ -56,10 +56,10 @@ const MessageForm = () => {
               </div>
 
               {/* Last Name Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-full md:w-[44%]">
                 <input
                   type="text"
-                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black outline-none focus:border-blue-500"
+                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 outline-none focus:border-blue-500"
                   placeholder="Last Name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
@@ -67,10 +67,10 @@ const MessageForm = () => {
                 />
               </div>
               {/* Email Name Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-full md:w-[44%]">
                 <input
                   type="Email"
-                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black outline-none focus:border-blue-500"
+                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 outline-none focus:border-blue-500"
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -78,10 +78,10 @@ const MessageForm = () => {
                 />
               </div>
               {/* Phone Number Field */}
-              <div className="relative m-7 flex h-16 w-[45%] items-center">
+              <div className="relative m-7 flex h-16 items-center sm:w-full md:w-[44%]">
                 <input
                   type="number"
-                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-black outline-none focus:border-blue-500"
+                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 outline-none focus:border-blue-500"
                   placeholder="Phone no."
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
@@ -93,7 +93,7 @@ const MessageForm = () => {
                 <textarea
                   rows={5}
                   type="text"
-                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 pt-5 text-black outline-none focus:border-blue-500"
+                  className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 pt-5 outline-none focus:border-blue-500"
                   placeholder="Message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
@@ -106,7 +106,7 @@ const MessageForm = () => {
             <div className="my-2 flex justify-center">
               <button
                 type="submit"
-                className="w-1/4 rounded-lg bg-blue-600 bg-opacity-60 py-2 text-white transition-colors hover:bg-blue-700 hover:bg-opacity-80 dark:bg-blue-800"
+                className="w-1/4 rounded-lg bg-blue-600 bg-opacity-60 py-2 text-white transition-colors hover:bg-blue-700 hover:bg-opacity-80 dark:bg-blue-800 dark:hover:bg-blue-900"
               >
                 Send
               </button>

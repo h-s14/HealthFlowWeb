@@ -25,19 +25,19 @@ const Login = () => {
       );
       toast.success(response.data.message);
       setIsAuthenticated(true);
-      navigateTo("/");
+      navigateTo("/appointment");
     } catch (error) {
       toast.error(error.response.data.message);
     }
   };
   if (isAuthenticated) {
-    return <Navigate to={"/"} />;
+    return <Navigate to={"/appointment"} />;
   }
 
   return (
     <div className="box-border flex h-screen justify-center bg-gradient-to-tr from-light-gradient-1 via-light-gradient-2 to-light-gradient-3 pb-10 pt-32 text-gray-600 dark:bg-gradient-to-tl dark:from-dark-gradient-1 dark:via-dark-gradient-2 dark:to-dark-gradient-3 dark:text-gray-600">
-      <div className="bg-login-form-bg dark:bg-login-form-bg-dark rounded-xl bg-opacity-10 p-6 shadow-md backdrop-blur-md backdrop-filter">
-        <h1 className="text-input-text-light dark:text-input-text-dark flex justify-center pb-5 text-4xl">
+      <div className="rounded-xl bg-login-form-bg bg-opacity-10 p-6 shadow-md backdrop-blur-md backdrop-filter dark:bg-login-form-bg-dark">
+        <h1 className="flex justify-center pb-5 text-4xl text-input-text-light dark:text-input-text-dark">
           Login
         </h1>
         <form onSubmit={handleLogin}>
@@ -47,7 +47,7 @@ const Login = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="text-input-text-light placeholder-input-text-light dark:placeholder-input-text-dark dark:text-input-text-dark h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 outline-none focus:border-blue-500"
+              className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-input-text-light placeholder-input-text-light outline-none focus:border-blue-500 dark:text-input-text-dark dark:placeholder-input-text-dark"
               placeholder="Email"
               required
             />
@@ -60,7 +60,7 @@ const Login = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="text-input-text-light placeholder-input-text-light dark:placeholder-input-text-dark dark:text-input-text-dark h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 outline-none focus:border-blue-500"
+              className="h-full w-full rounded-lg border-2 border-black border-opacity-20 bg-transparent pl-10 pr-5 text-input-text-light placeholder-input-text-light outline-none focus:border-blue-500 dark:text-input-text-dark dark:placeholder-input-text-dark"
               placeholder="Password"
               required
             />
@@ -69,13 +69,13 @@ const Login = () => {
 
           {/* Remember Me & Forgot Password */}
           <div className="flex items-center justify-between px-7">
-            <label className="text-input-text-light dark:text-input-text-dark flex items-center">
+            <label className="flex items-center text-input-text-light dark:text-input-text-dark">
               <input type="checkbox" className="mr-2 cursor-pointer" />
               Remember me
             </label>
             <a
               href="#"
-              className="text-input-text-light dark:text-input-text-dark pl-14 text-opacity-40 hover:underline"
+              className="pl-14 text-input-text-light text-opacity-40 hover:underline dark:text-input-text-dark"
             >
               Forgot Password?
             </a>
@@ -85,7 +85,7 @@ const Login = () => {
           <div className="mt-5 flex justify-center">
             <button
               type="submit"
-              className="bg-login-button-bg-light text-login-button-text-light dark:text-login-button-text-dark hover:bg-login-button-hover-bg-light dark:hover:bg-login-button-hover-bg-dark dark:bg-login-button-bg-dark w-[85%] rounded-lg bg-opacity-60 py-2 transition-colors hover:bg-opacity-80"
+              className="w-[85%] rounded-lg bg-login-button-bg-light bg-opacity-60 py-2 text-login-button-text-light transition-colors hover:bg-login-button-hover-bg-light hover:bg-opacity-80 dark:bg-login-button-bg-dark dark:text-login-button-text-dark dark:hover:bg-login-button-hover-bg-dark"
             >
               Login
             </button>
@@ -98,7 +98,7 @@ const Login = () => {
             </span>
             <Link
               to="/register"
-              className="text-input-text-light dark:text-input-text-dark ml-4 pl-8 text-opacity-40 hover:underline"
+              className="ml-4 pl-8 text-input-text-light text-opacity-40 hover:underline dark:text-input-text-dark"
             >
               Register Now
             </Link>
