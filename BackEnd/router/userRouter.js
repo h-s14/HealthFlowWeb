@@ -14,7 +14,6 @@ import {
   isPatientAuthenticated,
   isDoctorAuthenticated,
 } from "../middlewares/auth.js";
-import { get } from "mongoose";
 const router = express.Router();
 
 router.post("/patient/register", patientRegister);

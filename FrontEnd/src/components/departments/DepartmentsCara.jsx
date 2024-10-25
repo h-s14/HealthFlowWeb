@@ -13,7 +13,7 @@ import { ServiceData } from "./constants";
 
 const DepartmentsCara = () => {
   return (
-    <div className="mx-24 flex flex-col items-center justify-center rounded-3xl border-gray-100 bg-gray-400 bg-opacity-10 backdrop-blur-md backdrop-filter">
+    <div className="mx-24 flex flex-col items-center rounded-3xl border-gray-100 bg-gray-900 bg-opacity-10 backdrop-blur-md backdrop-filter">
       <Swiper
         breakpoints={{
           340: {
@@ -22,7 +22,7 @@ const DepartmentsCara = () => {
           },
           700: {
             slidesPerView: 3,
-            spaceBetween: 15,
+            spaceBetween: 0,
           },
         }}
         // navigation={true}
@@ -32,8 +32,8 @@ const DepartmentsCara = () => {
         className="lg:max-[80%] max-w-[80%]"
       >
         {ServiceData.map((item) => (
-          <SwiperSlide key={item.title}>
-            <div className="group relative my-12 flex h-[300px] w-[120px] cursor-pointer flex-col gap-6 rounded-3xl px-6 py-8 text-white shadow-lg lg:h-[300px] lg:w-[250px]">
+          <SwiperSlide className="" key={item.title}>
+            <div className="group relative mx-6 my-12 flex h-[300px] w-[120px] cursor-pointer flex-col rounded-3xl px-6 py-8 text-white shadow-lg lg:h-[300px] lg:w-[250px]">
               <div className="absolute inset-0 z-30 h-full rounded-3xl bg-cover bg-center text-gray-700 transition group-hover:scale-110 dark:text-gray-400">
                 <item.bgIcon
                   strokeWidth={1}
@@ -42,7 +42,7 @@ const DepartmentsCara = () => {
               </div>
 
               <div className="absolute inset-0 rounded-3xl bg-black opacity-10 group-hover:opacity-50" />
-              <div className="relative flex flex-col gap-3">
+              <div className="relative flex flex-col">
                 <h1 className="z-30 hidden text-xl text-nav-bar-text-light transition hover:text-nav-bar-text-hover-light group-hover:scale-110 dark:text-nav-bar-text-dark dark:hover:text-nav-bar-text-hover-dark md:flex lg:text-2xl">
                   {item.title}
                 </h1>
