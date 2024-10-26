@@ -38,7 +38,7 @@ const App = () => {
       }
     };
     fetchUser();
-  }, [isAuthenticated]);
+  }, []);
   return (
     <div className={`no-scrollbar ${darkMode ? "dark" : ""} `}>
       <Router>

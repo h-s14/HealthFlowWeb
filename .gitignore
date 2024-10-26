@@ -1,2 +1,6 @@
 info.md
 BackEnd/config/config.env
+.DS_Store
+/FrontEnd/dist
+/BackEnd/node_modules
+/FrontEnd/node_modules

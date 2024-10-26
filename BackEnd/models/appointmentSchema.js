@@ -26,8 +26,8 @@ const appointmentSchema = new mongoose.Schema({
   uid: {
     type: String,
     required: true,
-    minLength: [12, "UID must be 5-Digits"],
-    maxLength: [12, "UID must be 5-Digits"],
+    minLength: [12, "UID must be 12-Digits"],
+    maxLength: [12, "UID must be 12-Digits"],
   },
   dob: {
     type: String,

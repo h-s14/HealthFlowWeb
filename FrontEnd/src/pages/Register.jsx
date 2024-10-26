@@ -36,7 +36,7 @@ const Register = () => {
         {
           withCredentials: true,
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
       toast.success(response.data.message);
       setIsAuthenticated(true);
@@ -50,7 +50,7 @@ const Register = () => {
     return <Navigate to={"/"} />;
   }
   return (
-    <div className="container form-component register-form">
+    <div className="form-component register-form container">
       <h2>Sign Up</h2>
       <p>Please Sign Up to Continue</p>
       <p>
