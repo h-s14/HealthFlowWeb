@@ -1,5 +1,6 @@
 info.md
-BackEnd/config/config.env
+BackEnd/.env
+FrontEnd/.env
 .DS_Store
 /FrontEnd/dist
 /BackEnd/node_modules
