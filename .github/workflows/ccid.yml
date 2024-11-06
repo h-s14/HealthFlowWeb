@@ -58,7 +58,7 @@ jobs:
 
       - name: Setting ENVs from Github Secrets
         run: |
-          echo "MONFO_URI=${{secrets.MONFO_URI}}" | sudo tee  -a /var/www/healthflow.harkirat.site/.env
+          echo "MONFO_URI=${{secrets.MONGO_URI}}" | sudo tee  -a /var/www/healthflow.harkirat.site/.env
 
       - name: Restart Nginx
         run: sudo systemctl restart nginx
