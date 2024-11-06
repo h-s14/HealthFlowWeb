@@ -44,7 +44,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: backend-output
-          path: /home/ubuntu/healthflow/_work/HealthFlowWeb/HealthFlowWeb/backend
 
       - name: Downloading Frontend Build Artifact
         uses: actions/download-artifact@v4
