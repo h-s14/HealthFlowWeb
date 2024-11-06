@@ -44,6 +44,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: backend-output
+          path: /home/ubuntu/healthflow/_work/HealthFlowWeb/HealthFlowWeb/backend
 
       - name: Removing old Backend Files
         run: sudo rm -rf /var/www/healthflow.harkirat.site/backend/*
