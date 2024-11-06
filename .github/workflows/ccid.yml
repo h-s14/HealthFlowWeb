@@ -34,12 +34,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-output
-  #   - name: Removing the files in the serving directory
-  #     run: sudo rm -rf /var/www/harkirat.site/*
+      - name: Removing the files in the serving directory
+        run: sudo rm -rf /var/www/healthflow.harkirat.site
 
-  #   - name: Moving the App to the serving directory
-  #     run: sudo mv /home/ubuntu/portfolio/_work/Portfolio-Website/Portfolio-Website/dist/* /var/www/harkirat.site/
+      - name: Moving the App to serving directory
+        run: sudo mv /home/ubuntu/healthflow/_work/HealthFlowWeb/HealthFlowWeb/* /var/www/healthflow.harkirat.site/
 
-  #   - name: Restart Nginx
-  #     run: |
-  #       sudo systemctl restart nginx
+      - name: Restart Nginx
+        run: sudo systemctl restart nginx
