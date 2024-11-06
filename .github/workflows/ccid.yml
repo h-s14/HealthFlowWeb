@@ -56,5 +56,9 @@ jobs:
       - name: Moving the Files to serving directory
         run: sudo mv /home/ubuntu/healthflow/_work/HealthFlowWeb/HealthFlowWeb/* /var/www/healthflow.harkirat.site/
 
+      - name: Setting ENVs from Github Secrets
+        run: |
+          echo "MONFO_URI=${{secrets.MONFO_URI}}" | sudo tee  -a /var/www/healthflow.harkirat.site/.env
+
       - name: Restart Nginx
         run: sudo systemctl restart nginx
