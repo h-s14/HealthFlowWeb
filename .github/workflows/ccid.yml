@@ -66,6 +66,9 @@ jobs:
           echo "JWT_SECRET_KEY=${{secrets.JWT_SECRET_KEY}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
           echo "JWT_EXPIRES=${{secrets.JWT_EXPIRES}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
           echo "COOKIE_EXPIRE=${{secrets.COOKIE_EXPIRE}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
+          echo "CLOUDINARY_CLOUD_NAME=${{secrets.CLOUDINARY_CLOUD_NAME}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
+          echo "CLOUDINARY_API_SECRET=${{secrets.CLOUDINARY_API_SECRET}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
+          echo "CLOUDINARY_API_KEY=${{secrets.CLOUDINARY_API_KEY}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
 
       - name: Restart Backend
         run: |
