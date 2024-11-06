@@ -26,7 +26,7 @@ jobs:
         run: npm run build
         working-directory: ./FrontEnd
 
-      - name: Installing Admin Dashboard Dependencies
+      - name: Installing Dashboard Dependencies
         run: npm install
         working-directory: ./DashBoard
 
@@ -78,11 +78,18 @@ jobs:
       - name: Moving the Files to serving directory
         run: sudo mv /home/ubuntu/healthflow/_work/HealthFlowWeb/HealthFlowWeb/* /var/www/healthflow.harkirat.site/
 
+      - name: Removing old Admin Files
+        run: sudo rm -rf /var/www/dash-healthflow.harkirat.site/*
+
+      - name: Moving the Files to serving directory
+        run: sudo mv /home/ubuntu/healthflow/_work/Dashboard/* /var/www/dash-healthflow.harkirat.site/
+
       - name: Setting ENVs from Github Secrets
         run: |
           sudo touch /var/www/healthflow.harkirat.site/health.env && \
           echo "MONGO_URI=${{secrets.MONGO_URI}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
           echo "FRONTEND_URL=${{secrets.FRONTEND_URL}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
+          echo "DASHBOARD_URL=${{secrets.DASHBOARD_URL}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
           echo "JWT_SECRET_KEY=${{secrets.JWT_SECRET_KEY}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
           echo "JWT_EXPIRES=${{secrets.JWT_EXPIRES}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
           echo "COOKIE_EXPIRE=${{secrets.COOKIE_EXPIRE}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
@@ -90,11 +97,11 @@ jobs:
           echo "CLOUDINARY_API_SECRET=${{secrets.CLOUDINARY_API_SECRET}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
           echo "CLOUDINARY_API_KEY=${{secrets.CLOUDINARY_API_KEY}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
 
-      - name: Restart Backend
+      - name: Restarting Node
         run: |
           sudo systemctl daemon-reload && \
           sudo systemctl restart healthflow-backend && \
           sudo systemctl status healthflow-backend
 
-      - name: Restart Frontend
+      - name: Restart Nginx
         run: sudo systemctl restart nginx
