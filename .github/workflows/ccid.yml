@@ -35,7 +35,7 @@ jobs:
         with:
           name: build-output
       - name: Removing the files in the serving directory
-        run: sudo rm -rf /var/www/healthflow.harkirat.site
+        run: sudo rm -rf /var/www/healthflow.harkirat.site/*
 
       - name: Moving the App to serving directory
         run: sudo mv /home/ubuntu/healthflow/_work/HealthFlowWeb/HealthFlowWeb/* /var/www/healthflow.harkirat.site/
