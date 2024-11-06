@@ -10,9 +10,12 @@ const Doctors = () => {
   useEffect(() => {
     const fetchDoctors = async () => {
       try {
-        const { data } = await axios.get("/api/v1/user/doctors", {
-          withCredentials: true,
-        });
+        const { data } = await axios.get(
+          "https://healthflow.harkirat.site/api/v1/user/doctors",
+          {
+            withCredentials: true,
+          }
+        );
         setDoctors(data.doctors);
       } catch (error) {
         toast.error(error.response.data.message);

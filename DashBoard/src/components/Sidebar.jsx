@@ -18,7 +18,7 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get("/api/v1/user/admin/logout", {
+      .get("https://healthflow.harkirat.site/api/v1/user/admin/logout", {
         withCredentials: true,
       })
       .then((res) => {

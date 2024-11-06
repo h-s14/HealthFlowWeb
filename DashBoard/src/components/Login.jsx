@@ -19,7 +19,7 @@ const Login = () => {
     try {
       await axios
         .post(
-          "/api/v1/user/login",
+          "https://healthflow.harkirat.site/api/v1/user/login",
           { email, password, confirmPassword, role: "Admin" },
           {
             withCredentials: true,

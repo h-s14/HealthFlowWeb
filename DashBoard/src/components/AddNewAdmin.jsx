@@ -23,7 +23,7 @@ const AddNewAdmin = () => {
     try {
       await axios
         .post(
-          "/api/v1/user/admin/addnew",
+          "https://healthflow.harkirat.site/api/v1/user/admin/addnew",
           { firstName, lastName, email, phone, nic, dob, gender, password },
           {
             withCredentials: true,

@@ -20,9 +20,12 @@ const App = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get("api/v1/user/admin/me", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://healthflow.harkirat.site/api/v1/user/admin/me",
+          {
+            withCredentials: true,
+          }
+        );
         setIsAuthenticated(true);
         setUser(response.data.user);
       } catch (error) {
