@@ -10,9 +10,12 @@ const Messages = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const { data } = await axios.get("/api/v1/message/getall", {
-          withCredentials: true,
-        });
+        const { data } = await axios.get(
+          "https://healthflow.harkirat.site/api/v1/message/getall",
+          {
+            withCredentials: true,
+          }
+        );
         setMessages(data.messages);
       } catch (error) {
         console.log(error.response.data.message);

@@ -12,9 +12,12 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const { data } = await axios.get("/api/v1/appointment/getAll", {
-          withCredentials: true,
-        });
+        const { data } = await axios.get(
+          "https://healthflow.harkirat.site/api/v1/appointment/getAll",
+          {
+            withCredentials: true,
+          }
+        );
         setAppointments(data.appointments);
       } catch (error) {
         setAppointments([]);
@@ -26,7 +29,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-        `/api/v1/appointment/update/${appointmentId}`,
+        `https://healthflow.harkirat.site/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
       );
