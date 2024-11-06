@@ -1,0 +1,36 @@
+name: Deploying React Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Installing Dependencies
+        run: npm install
+        working-directory: ./FrontEnd
+
+      - name: Building the App
+        run: npm run build
+        working-directory: ./FrontEnd
+
+      - name: Uploading the Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-output
+          path: ./FrontEnd/dist
+    #   - name: Removing the files in the serving directory
+    #     run: sudo rm -rf /var/www/harkirat.site/*
+
+    #   - name: Moving the App to the serving directory
+    #     run: sudo mv /home/ubuntu/portfolio/_work/Portfolio-Website/Portfolio-Website/dist/* /var/www/harkirat.site/
+
+    #   - name: Restart Nginx
+    #     run: |
+    #       sudo systemctl restart nginx

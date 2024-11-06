@@ -10,7 +10,7 @@ const Auths = () => {
 
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user/patient/logout", {
+      .get("/api/v1/user/patient/logout", {
         withCredentials: true,
       })
       .then((res) => {
