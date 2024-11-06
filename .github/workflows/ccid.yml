@@ -12,33 +12,55 @@ jobs:
       - name: Checkout Source
         uses: actions/checkout@v4
 
-      - name: Installing Dependencies
+      - name: Installing Backend Dependencies
         run: npm install
-        working-directory: ./FrontEnd
+        working-directory: ./BackEnd
 
-      - name: Building the App
-        run: npm run build
-        working-directory: ./FrontEnd
+      # - name: Installing Dependencies
+      #   run: npm install
+      #   working-directory: ./FrontEnd
 
-      - name: Uploading the Build Artifact
+      # - name: Building the App
+      #   run: npm run build
+      #   working-directory: ./FrontEnd
+
+      - name: Upload the Backend  Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-output
-          path: ./FrontEnd/dist
+          name: backend-output
+          path: ./BackEnd
+
+      # - name: Uploading the Frontend Build Artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: frontend-output
+      #     path: ./FrontEnd/dist
 
   deploy:
     runs-on: self-hosted
     needs: build
     steps:
-      - name: Downloading Build Artifact
+      - name: Downloading Backend Artifact
         uses: actions/download-artifact@v4
         with:
-          name: build-output
-      - name: Removing the files in the serving directory
-        run: sudo rm -rf /var/www/healthflow.harkirat.site/*
+          name: backend-output
 
-      - name: Moving the App to serving directory
-        run: sudo mv /home/ubuntu/healthflow/_work/HealthFlowWeb/HealthFlowWeb/* /var/www/healthflow.harkirat.site/
+      - name: Removing old Backend Files
+        run: sudo rm -rf /var/www/healthflow.harkirat.site/backend/*
 
-      - name: Restart Nginx
-        run: sudo systemctl restart nginx
+      # - name: Moving the Backend files to the serving directory
+      #   run: sudo mv
+
+      # - name: Downloading Frontend Build Artifact
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: frontend-output
+
+      # - name: Removing the files in the serving directory
+      #   run: sudo rm -rf /var/www/healthflow.harkirat.site/*
+
+      # - name: Moving the App to serving directory
+      #   run: sudo mv /home/ubuntu/healthflow/_work/HealthFlowWeb/HealthFlowWeb/* /var/www/healthflow.harkirat.site/
+
+      # - name: Restart Nginx
+      #   run: sudo systemctl restart nginx
