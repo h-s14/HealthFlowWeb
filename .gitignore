@@ -5,3 +5,4 @@ FrontEnd/.env
 /FrontEnd/dist
 /BackEnd/node_modules
 /FrontEnd/node_modules
+*.env

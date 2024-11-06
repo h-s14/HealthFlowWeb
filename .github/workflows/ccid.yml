@@ -58,8 +58,9 @@ jobs:
 
       - name: Setting ENVs from Github Secrets
         run: |
-          sudo touch /var/www/healthflow.harkirat.site/.env && \
-          echo "MONGO_URI=${{secrets.MONGO_URI}}" | sudo tee  -a /var/www/healthflow.harkirat.site/.env
+          sudo touch /var/www/healthflow.harkirat.site/health.env && \
+          echo "MONGO_URI=${{secrets.MONGO_URI}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
+          echo "FRONTEND_URL=${{secrets.FRONTEND_URL}}" | sudo tee  -a /var/www/healthflow.harkirat.site/health.env
 
       - name: Restart Backend
         run: |
