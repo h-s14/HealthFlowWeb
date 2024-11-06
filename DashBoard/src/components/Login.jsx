@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
+import { FaUser, FaLock } from "react-icons/fa";
 import { toast } from "react-toastify";
-// import { Toaster, toast } from "sonner";
 import { Context } from "../main";
 import axios from "axios";
 
@@ -27,7 +27,6 @@ const Login = () => {
           }
         )
         .then((res) => {
-          // <Toaster position="top-center" richColors />;
           toast.success(res.data.message);
           setIsAuthenticated(true);
           navigateTo("/");
@@ -36,7 +35,6 @@ const Login = () => {
           setConfirmPassword("");
         });
     } catch (error) {
-      // <Toaster position="top-center" richColors />;
       toast.error(error.response.data.message);
     }
   };
@@ -45,53 +43,54 @@ const Login = () => {
   }
   return (
     <div className="overflow-hidden ">
-      <div className="flex w-full h-screen">
+      <div className="flex w-full bg-lp-bg h-screen">
         <div className="w-full lg:w-1/2 flex items-center justify-center">
           <div className="max-h-full overflow-auto">
-            <div className="bg-white px-7 py-14 rounded-3xl border-2 border-gray-200">
-              <div className="text-3xl font-semibold">
+            <div className="bg-card-bg text-white px-7 py-14 rounded-3xl border-2 flex flex-col justify-center items-center border-card-border">
+              <div className="text-3xl text-t-p font-semibold">
                 WELCOME TO HEALTH FLOW
               </div>
-              <p className="font-small text-lg text-gray-500 mt-4">
+              <div className="font-small text-md text-t-s mt-4 ">
                 Only Admins Are Allowed To Access These Resources!
-              </p>
-              <form onSubmit={handleLogin}>
-                <div className="mt-8">
-                  <label className="text-lg font-medium">Email</label>
+              </div>
+              <form className=" w-full" onSubmit={handleLogin}>
+                <div className="relative mx-8 my-8 flex h-16 items-center">
                   <input
-                    className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1"
-                    type="text"
-                    placeholder="Email"
+                    type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    className="h-full w-full rounded-lg border-2 border-card-border border-opacity-60 bg-transparent pl-10 pr-5 text-input-text placeholder-input-text outline-none  focus:border-t-f focus:border-opacity-80"
+                    placeholder="Email"
+                    required
                   />
+                  <FaUser className="absolute left-3 text-t-s" />
                 </div>
-                <div className="mt-8">
-                  <label className="text-lg font-medium">Password</label>
+                <div className="relative my-8 mx-8 flex h-16 items-center">
                   <input
-                    className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1"
                     type="password"
-                    placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    className="h-full w-full rounded-lg border-2 border-card-border border-opacity-60 bg-transparent pl-10 pr-5 text-input-text placeholder-input-text outline-none  focus:border-t-f focus:border-opacity-80"
+                    placeholder="Password"
+                    required
                   />
+                  <FaLock className="absolute left-3 text-t-s" />
                 </div>
-                <div className="mt-8">
-                  <label className="text-lg font-medium">
-                    Re-Enter Password
-                  </label>
+                <div className="relative my-8 mx-8 flex h-16 items-center">
                   <input
-                    className="w-full border-2 border-gray-100 rounded-xl p-4 mt-1"
                     type="password"
-                    placeholder="Re-Enter Password"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
+                    className="h-full w-full rounded-lg border-2 border-card-border border-opacity-60 bg-transparent pl-10 pr-5 text-input-text placeholder-input-text outline-none  focus:border-t-f focus:border-opacity-80"
+                    placeholder="Re-Enter Password"
+                    required
                   />
+                  <FaLock className="absolute left-3 text-t-s" />
                 </div>
                 <div className="mt-8 flex flex-col">
                   <button
                     type="submit"
-                    className="active:scale-[.98] active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-2 rounded-xl bg-violet-500 text-white text-lg font-bold"
+                    className="active:scale-[.98] mx-8 active:duration-75 hover:scale-[1.01] ease-in-out transition-all py-2 rounded-xl bg-gradient-to-tr from-grad-s to-grad-e text-white text-lg font-bold"
                   >
                     LOG IN
                   </button>
@@ -100,8 +99,8 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div className="hidden relative lg:flex items-center justify-center h-full w-1/2 bg-gray-200">
-          <div className="w-60 h-60  bg-gradient-to-tr from-violet-500 to-pink-500 rounded-full animate-spin" />
+        <div className="hidden relative lg:flex items-center justify-center h-full w-1/2 bg-rp-bg">
+          <div className="w-60 h-60  bg-gradient-to-tr from-grad-s to-grad-e rounded-full animate-spin" />
           <div className="w-full h-1/2 absolute bottom-0 bg-white/10 backdrop-blur-lg" />
         </div>
       </div>
