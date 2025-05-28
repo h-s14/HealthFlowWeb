@@ -47,6 +47,7 @@ export default {
 
         "nav-bar-text-light": "#2A3D40",
         "nav-bar-text-dark": "#D1E8E4",
+
         "nav-bar-text-hover-light": "#3A4F55",
         "nav-bar-text-hover-dark": "#FFFFFF",
         // Background

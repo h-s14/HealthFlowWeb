@@ -22,6 +22,7 @@ jobs:
 
       - name: Publish Image to Docker Hub
         run: docker push hs14/healthflow-reactjs:latest
+
   deploy:
     needs: build
     runs-on: self-hosted
