@@ -6,3 +6,5 @@ FrontEnd/.env
 /BackEnd/node_modules
 /FrontEnd/node_modules
 *.env
+.DS_Store
+/.vscode
